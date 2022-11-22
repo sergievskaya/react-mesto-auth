@@ -33,8 +33,4 @@
   - Create React App;
   - Портирование разметки в JSX;
   - Функциональные компоненты;
-  - Хуки.
-
-## Ссылка на gh-pages:
-
-https://sergievskaya.github.io/react-mesto-auth/
+  - Хуки;
