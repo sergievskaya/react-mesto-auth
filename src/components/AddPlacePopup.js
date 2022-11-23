@@ -7,8 +7,10 @@ function AddPlacePopup({isOpen, onClose, onAddPlace, isLoading}) {
     const linkRef = useRef();
 
     useEffect(() => {
-        nameRef.current.value = '';
-        linkRef.current.value = '';
+        if(isOpen){
+            nameRef.current.value = '';
+            linkRef.current.value = '';
+        }
     }, [isOpen])
 
     function handleSubmit(evt) {
