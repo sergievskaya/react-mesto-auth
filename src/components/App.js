@@ -30,15 +30,17 @@ function App() {
     const [userEmail, setUserEmail] = useState('');
 
     useEffect(() => {
-        Promise.all([api.getUserInfo(), api.getInitialCards()])
-          .then(([userData, initialCards]) => {
-            setCards(initialCards);
-            setCurrentUser(userData);
-          })
-          .catch((err) => {
-            console.log(`Ошибка: ${err}`);
-          });
-    }, []);
+        if(loggedIn) {
+            Promise.all([api.getUserInfo(), api.getInitialCards()])
+            .then(([userData, initialCards]) => {
+                setCards(initialCards);
+                setCurrentUser(userData);
+            })
+            .catch((err) => {
+                console.log(`Ошибка: ${err}`);
+            });
+        }
+    }, [loggedIn]);
 
     function  handleEditAvatarClick()  {
         setIsEditAvatarPopupOpen(true);
